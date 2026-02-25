@@ -4,7 +4,7 @@ public class Locators {
     public static final String FORMAT_DROPDOWNS = "//select[starts-with(@id,'tafmt_')]";
 
     public static final String DOWNLOAD_BUTTON =
-            "/html/body/div[1]/div/div/div[3]/div[2]/div[2]/div/div/div[2]/div/div[2]/div[2]/div[1]/div/a";
+            "(//*[contains(normalize-space(),'Download')])[1]";
 
     public static final String ADVANCED_BUTTON = "/html/body/div/div[2]/button[3]";
     public static final String CONTINUE_LINK = "/html/body/div/div[3]/p[2]/a";
