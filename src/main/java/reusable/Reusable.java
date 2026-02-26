@@ -27,11 +27,11 @@ public class Reusable {
 //    }
 
     public WebElement waitForPresence(String xpath) {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Locators.UPLOAD_INPUT)));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
     }
 
     public WebElement waitForDownloadButton(String xpath) {
-        return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Locators.DOWNLOAD_BUTTON)));
+        return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
     }
 
     public void clickAdvancedAndContinueButton() {
@@ -75,5 +75,17 @@ public class Reusable {
                 By.cssSelector(Locators.NITRO_UPLOAD_FILES));
         return fileInput;
 
+    }
+    public WebElement test() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        // Wait for the element to be present in the DOM
+        WebElement element = driver.findElement(
+                By.xpath("(//input[@type='file'])[2]")
+        );
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+       js.executeScript("arguments[0].style.display='block';", element);
+
+        return element;
     }
 }

@@ -14,5 +14,6 @@ public class Locators {
     public static final String START_CONVERTING_BUTTON = "(//div[@class='btn_convert conv_start'])[1]";
     public static final String CONVERT_BUTTON = "(//button[@data-automation-id='FileInputDropdownFileConvert'])";
     public static final String NITRO_UPLOAD_FILES = "input[type='file']";
+    public static final String AddFiles_Btn_AConvert = "div.moxie-shim moxie-shim-html5";
 
 }
