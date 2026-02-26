@@ -21,13 +21,8 @@ public class filezigzag {
 
     @BeforeEach
     public void setDriver() {
-
         driver = DriverFactory.initDriver();
         reusable = new Reusable(driver);
-    }
-    @AfterEach
-    public void closeDriver(){
-        DriverFactory.quitDriver();
     }
 
     @Test

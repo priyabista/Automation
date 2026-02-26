@@ -28,10 +28,7 @@ public class AConvert {
             driver = DriverFactory.initDriver();
             reusable =  new Reusable(driver);
         }
-        @AfterEach
-        public void closeDriver(){
-            DriverFactory.quitDriver();
-        }
+
         @Test
         public  void getFilesToUpload() {
             driver.get("https://www.aconvert.com/");
@@ -71,11 +68,11 @@ public class AConvert {
                        break;
                }
             }
-            driver.quit();
         }
 
     public void uploadFiles(WebDriver driver, String filePath, String extension) {
-        WebElement fileInput = reusable.test();
+        WebElement fileInput = reusable.getAconvertUploadInput();
+        System.out.println("This is a upload files call" + filePath);
         fileInput.sendKeys(filePath);  // Works even if element is hidden
     }
 

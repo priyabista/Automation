@@ -15,16 +15,9 @@ public class Reusable {
     private WebDriverWait wait;
 
     public Reusable(WebDriver driver) {
-        this.driver = DriverFactory.initDriver();
+        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-
-
-
-//    public static WebDriver ManageEdgeDriver() {
-//        System.setProperty("webdriver.edge.driver", driverExe);
-//        return new EdgeDriver();
-//    }
 
     public WebElement waitForPresence(String xpath) {
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
@@ -76,16 +69,16 @@ public class Reusable {
         return fileInput;
 
     }
-    public WebElement test() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        // Wait for the element to be present in the DOM
-        WebElement element = driver.findElement(
-                By.xpath("(//input[@type='file'])[2]")
+    public WebElement getAconvertUploadInput() {
+        WebElement containerElement = driver.findElement(By.id("uploader_container"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", containerElement);
+        return wait.until(
+                ExpectedConditions.presenceOfElementLocated(
+                        By.xpath(Locators.AddFiles_Btn_AConvert)
+                )
         );
-       JavascriptExecutor js = (JavascriptExecutor) driver;
-       js.executeScript("arguments[0].style.display='block';", element);
 
-        return element;
+
     }
 }
