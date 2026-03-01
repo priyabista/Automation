@@ -25,11 +25,6 @@ public class FreeConvert {
         driver = DriverFactory.initDriver();
         reusable = new Reusable(driver);
     }
-    @AfterEach
-    public void closeDriver(){
-
-        DriverFactory.quitDriver();
-    }
 
     @Test
     public void uploadMultipleFiles() {
@@ -49,7 +44,9 @@ public class FreeConvert {
         Allure.step("Uploading files " + new File(allFiles).getName());
         uploadInput.sendKeys(allFiles);
 
-        WebElement Convert = driver.findElement(By.xpath(Locators.CONVERT_BUTTON));
-        Convert.click();
+        reusable.Check_FC_File_List_Bottom_Bar();
+        WebElement button_to_click = reusable.Handle_FC_Convert_Button();
+        button_to_click.click();
+
     }
 }

@@ -29,7 +29,6 @@ public class Reusable {
 
     public void clickAdvancedAndContinueButton() {
 
-
         WebElement btnOne = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Locators.ADVANCED_BUTTON)));
 
         if(btnOne != null) {
@@ -64,8 +63,7 @@ public class Reusable {
         SearchContext shadowRoot = host.getShadowRoot();
 
         // Step 3: Locate file input inside shadow DOM
-        WebElement fileInput = shadowRoot.findElement(
-                By.cssSelector(Locators.NITRO_UPLOAD_FILES));
+        WebElement fileInput = shadowRoot.findElement(By.cssSelector(Locators.NITRO_UPLOAD_FILES));
         return fileInput;
 
     }
@@ -73,12 +71,15 @@ public class Reusable {
         WebElement containerElement = driver.findElement(By.id("uploader_container"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", containerElement);
-        return wait.until(
-                ExpectedConditions.presenceOfElementLocated(
-                        By.xpath(Locators.AddFiles_Btn_AConvert)
-                )
-        );
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Locators.AddFiles_Btn_AConvert)));
+    }
 
+    public WebElement Check_FC_File_List_Bottom_Bar() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Locators.FC_Wait_For_File_List_Bottom_Bar)));
+    }
 
+    public WebElement Handle_FC_Convert_Button() {
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Locators.FC_Convert_button)));
+        return  button;
     }
 }
