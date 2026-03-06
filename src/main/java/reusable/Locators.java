@@ -12,5 +12,7 @@ public class Locators {
     public static final String NITRO_UPLOAD_FILES = "input[type='file']";
     public static final String AddFiles_Btn_AConvert = "//div[contains(@class,'moxie-shim')]//input[@type='file']";
     public static final String Zam_Choose_file_btn = "//button[@id='btn-input-file']";
+    public static final String Zam_btn = "";
+
 
 }
