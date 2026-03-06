@@ -39,7 +39,6 @@ public class FreeConvert {
         };
 
         String allFiles = String.join("\n", files);
-
         WebElement uploadInput = reusable.waitForPresence(Locators.UPLOAD_INPUT);
         Allure.step("Uploading files " + new File(allFiles).getName());
         uploadInput.sendKeys(allFiles);

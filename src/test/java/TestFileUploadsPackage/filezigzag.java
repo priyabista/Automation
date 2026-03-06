@@ -25,7 +25,6 @@ public class filezigzag {
         reusable = new Reusable(driver);
     }
 
-    @Test
     public void HandleConnectionSecure(){
         Allure.step("Opening website" + upload_url);
         driver.get(upload_url);

@@ -68,12 +68,13 @@ public class AConvert {
                        break;
                }
             }
+            WebElement Convert_Btn = driver.findElement(By.xpath("//span[normalize-space()='Convert Now']"));
+            Convert_Btn.click();
         }
 
-    public void uploadFiles(WebDriver driver, String filePath, String extension) {
-        WebElement fileInput = reusable.getAconvertUploadInput();
-        System.out.println("This is a upload files call" + filePath);
-        fileInput.sendKeys(filePath);  // Works even if element is hidden
-    }
+        public void uploadFiles(WebDriver driver, String filePath, String extension) {
+           WebElement fileInput = reusable.getAconvertUploadInput();
+           fileInput.sendKeys(filePath);
+        }
 
 }

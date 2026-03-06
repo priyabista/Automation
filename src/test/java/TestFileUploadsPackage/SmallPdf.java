@@ -24,11 +24,6 @@ public class SmallPdf {
         driver = DriverFactory.initDriver();
         reusable = new Reusable(driver);
     }
-    @AfterEach
-    public void closeDriver(){
-
-        DriverFactory.quitDriver();
-    }
     private String getUrlByExtension(String filePath)
     {
 

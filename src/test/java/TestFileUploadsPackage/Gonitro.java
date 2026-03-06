@@ -20,13 +20,8 @@ public class Gonitro {
 
     @BeforeEach
     public void setDriver(){
-
         driver = DriverFactory.initDriver();
         reusable = new Reusable(driver);
-    }
-    @AfterEach
-    public void closeDriver(){
-        DriverFactory.quitDriver();
     }
 
     private String getUrlByExtension(String filePath) {

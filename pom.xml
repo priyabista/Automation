@@ -81,6 +81,7 @@
                         <include>**/FreeConvert.java</include>
                         <include>**/filezigzag.java</include>
                         <include>**/Gonitro.java</include>
+                        <include>**/AConvert.java</include>
                     </includes>
                     <systemPropertyVariables>
                         <allure.results.directory>

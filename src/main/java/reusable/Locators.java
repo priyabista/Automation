@@ -11,5 +11,6 @@ public class Locators {
     public static final String FC_Convert_button = "//button[@class='button primary file-input-dropdown__action__convert']";
     public static final String NITRO_UPLOAD_FILES = "input[type='file']";
     public static final String AddFiles_Btn_AConvert = "//div[contains(@class,'moxie-shim')]//input[@type='file']";
+    public static final String Zam_Choose_file_btn = "//button[@id='btn-input-file']";
 
 }
