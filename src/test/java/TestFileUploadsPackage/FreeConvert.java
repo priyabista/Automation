@@ -43,7 +43,7 @@ public class FreeConvert {
         Allure.step("Uploading files " + new File(allFiles).getName());
         uploadInput.sendKeys(allFiles);
 
-        reusable.Check_FC_File_List_Bottom_Bar();
+        reusable.waitForElementById(Locators.FILE_LIST);
         WebElement button_to_click = reusable.Handle_FC_Convert_Button();
         button_to_click.click();
 

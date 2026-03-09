@@ -23,8 +23,8 @@ public class Reusable {
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
     }
 
-    public WebElement waitForDownloadButton(String xpath) {
-        return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+    public WebElement waitForDownloadButton(By locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public void clickAdvancedAndContinueButton() {
@@ -74,8 +74,8 @@ public class Reusable {
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Locators.AddFiles_Btn_AConvert)));
     }
 
-    public WebElement Check_FC_File_List_Bottom_Bar() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Locators.FC_Wait_For_File_List_Bottom_Bar)));
+    public WebElement waitForElementById(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public WebElement Handle_FC_Convert_Button() {
