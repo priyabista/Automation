@@ -19,8 +19,8 @@ public class Reusable {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public WebElement waitForPresence(String xpath) {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+    public WebElement waitForPresence(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     public WebElement waitForDownloadButton(By locator) {

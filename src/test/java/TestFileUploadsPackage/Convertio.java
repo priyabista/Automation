@@ -57,7 +57,7 @@ public class Convertio {
     }
 
     public void findFileUploadInput(WebDriver driver, String filePath, String extensions){
-        WebElement upload_btn = driver.findElement(By.xpath(Locators.UPLOAD_INPUT));
+        WebElement upload_btn = driver.findElement(Locators.UPLOAD_INPUT);
         upload_btn.sendKeys(filePath);
     }
 }

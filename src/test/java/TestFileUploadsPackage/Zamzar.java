@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import reusable.Locators;
 import utils.ConfigReader;
@@ -26,7 +27,7 @@ private static final String Zamzar_url = "https://www.zamzar.com/";
         driver = DriverFactory.initDriver();
         reusable = new Reusable(driver);
         driver.get(Zamzar_url);
-        WebElement element = reusable.waitForPresence("//*[@id=\"home\"]/header/nav/div");
+        WebElement element = reusable.waitForPresence(Locators.ZAMZAR_NAVIGATION_BAR);
     }
     @Test
     public void get_filePaths(){
@@ -69,8 +70,10 @@ private static final String Zamzar_url = "https://www.zamzar.com/";
 
         upload_btn.sendKeys(filePath);
         reusable.waitForElementById(Locators.ZAMZAR_FILE_LIST);
+        Select dropdown = new Select(driver.findElement(By.xpath("//select[@id='format']")));
+        dropdown.selectByValue("doc");
+        WebElement settings_popup = reusable.waitForPresence(By.className("modal-dialog"));
+        WebElement convertNow_btn = reusable.waitForPresence(Locators.ZAMZAR_CONVERT_BTN);
 
     }
-
-
 }
