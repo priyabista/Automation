@@ -17,6 +17,7 @@ public class Locators {
     // Locators for Zamzar website only
     public static final By ZAMZAR_FILE_LIST = By.id("file-list");
     public static final By ZAMZAR_CONVERT_BTN = By.id("options-apply-settings");
-//*[@id=\"home\"]/header/nav/div"
+    public static final By  convertBtn = By.id("convert");
+
 
 }

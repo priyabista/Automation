@@ -73,7 +73,12 @@ private static final String Zamzar_url = "https://www.zamzar.com/";
         Select dropdown = new Select(driver.findElement(By.xpath("//select[@id='format']")));
         dropdown.selectByValue("doc");
         WebElement settings_popup = reusable.waitForPresence(By.className("modal-dialog"));
-        WebElement convertNow_btn = reusable.waitForPresence(Locators.ZAMZAR_CONVERT_BTN);
+        WebElement progress_bar = reusable.waitForPresence(By.className("progress"));
+
+
+        WebElement convertNow_btn = driver.findElement(Locators.convertBtn);
+        convertNow_btn.click();
+
 
     }
 }
